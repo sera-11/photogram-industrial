@@ -48,4 +48,33 @@ task({ :sample_data => :environment }) do
     end
   end #end of nested loop
   p "There are now #{FollowRequest.count} follow requests."
+
+
+  users.each do |user|
+    #Create photos
+    rand(15).times do
+      photo = user.own_photos.create(
+        caption: Faker::Quote.yoda,
+        image: Faker::LoremFlickr.image
+      )
+      
+      #Likes
+      user.followers.each do |follower|
+        if rand < 0.5 && !photo.fans.include?(follower)
+          photo.fans << follower
+        end
+
+        #Comments
+        if rand < 0.25
+          photo.comments.create(
+            body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
+            author: follower
+          )
+        end
+      end
+    end
+  end
+  p "There are now #{Photo.count} photos."
+  p "There are now #{Like.count} likes."
+  p "There are now #{Comment.count} comments."
 end

@@ -11,22 +11,34 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :author_id, style: "display: block" %>
-    <%= form.text_field :author_id %>
-  </div>
+  <!-- new code below -->
+
+  <%= form.hidden_field :photo_id %>
 
   <div>
-    <%= form.label :photo_id, style: "display: block" %>
-    <%= form.text_field :photo_id %>
-  </div>
-
-  <div>
-    <%= form.label :body, style: "display: block" %>
     <%= form.text_area :body %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
+
+ <!-- <div>-->
+    <%#= form.label :author_id, style: "display: block" %>
+    <%#= form.text_field :author_id %>
+<!--  </div>
+
+  <div>
+    <%#= form.label :photo_id, style: "display: block" %>-->
+    <%#= form.text_field :photo_id %>
+<!--  </div>
+
+  <div>
+    <%#= form.label :body, style: "display: block" %>-->
+    <%#= form.text_area :body %>
+<!--  </div>
+
+  <div>
+    <%#= form.submit %>-->
+<!--  </div>-->
 <% end %>

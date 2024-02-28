@@ -12,13 +12,10 @@
         <%= link_to "Liked photos", liked_path(@user.username), class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/<%= @user.username %>/feed">Feed</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="/<%=@user.username%>/followers">Followers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Following</a>
+        <a class="nav-link" href="/<%=@user.username%>/following">Following</a>
       </li>
     </ul>
   </div>

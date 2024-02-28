@@ -1,13 +1,30 @@
-<h1> <%= @user.username %> </h1>
+<div class="row">
+  <div class="col md-6 offset-3">
+    <h1>
+      <%= @user.username %>
+    </h1>
 
-<h2> Own photos </h2>
-
-<%current_user.own_photos.each do |photo| %>
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-
-      <%= render "users/own_photos", photo: photo  %>
-
-    </div>
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <a class="nav-link active" href="/<%= @user.username %>">Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/<%= @user.username %>/liked">Liked photos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/<%= @user.username %>/feed">Feed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Followers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Following</a>
+      </li>
+    </ul>
   </div>
+</div>
+
+
+<%@user.own_photos.each do |photo| %>
+      <%= render "users/own_photos", photo: photo  %>
 <%end%>

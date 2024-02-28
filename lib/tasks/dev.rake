@@ -71,7 +71,7 @@ task({ :sample_data => :environment }) do
     rand(15).times do
       photo = user.own_photos.create(
         caption: Faker::Quote.yoda,
-        image: Faker::LoremFlickr.image
+        image: Faker::Avatar.image(slug: "my-own-slug")
       )
       
       #Likes

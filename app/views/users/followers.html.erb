@@ -1,0 +1,5 @@
+<%= render "users/profile_nav", user: @user %>
+
+<% @user.followers.each do |user| %>
+  <%= render "users/user", user: user %>
+<% end %>

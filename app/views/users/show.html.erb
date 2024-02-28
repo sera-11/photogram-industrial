@@ -25,5 +25,11 @@
 </div>
 
 <%@user.own_photos.each do |photo| %>
-  <%= render "users/own_photos", photo: photo  %>
+  <%= render "photos/photo", photo: photo  %>
 <%end%>
+<!--
+++ The first photos/ -- view template folders in app/views
+++ The second photo -- partial in the folder "_photo.html.erb"
+++ The third photo -- name of local variable in _photo.html.erb
+++ The fouth photo -- block variable object from .each loop we pass into partial (similar to parameters)
+-->

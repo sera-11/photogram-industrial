@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "photos#index"
 
+  get ":username/liked" => "users#liked", as: :liked
+
+
   # get "/users/:id" => "users#show", as: :user
   # resources :users, only: :show
   get "/:username" => "users#show", as: :user

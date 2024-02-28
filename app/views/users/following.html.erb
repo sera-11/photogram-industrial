@@ -25,6 +25,6 @@
   </div>
 </div>
 
-<% @user.followers.each do |user| %>
+<% @user.leaders.each do |user| %>
   <%= render "users/user", user: user %>
 <% end %>
